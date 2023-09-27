@@ -1,0 +1,21 @@
+# Use root/example as user/password credentials
+version: '1.0'
+name: botc-stats-db
+services:
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: botc123
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 3308:3306
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8090:8080
