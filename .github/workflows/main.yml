@@ -36,4 +36,20 @@ jobs:
       with:
         name: backend
         path: backend/build/libs
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5.0.0
+      with:
+        file: backend/Dockerfile
+        push: true
+        
+        
+
+
+        
 
