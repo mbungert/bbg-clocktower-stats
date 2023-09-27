@@ -47,6 +47,8 @@ jobs:
       with:
         file: backend/Dockerfile
         push: true
+        tags:
+          user/app:latest
         
         
 
