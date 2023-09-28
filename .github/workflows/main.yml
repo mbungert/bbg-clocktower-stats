@@ -34,7 +34,7 @@ jobs:
         arguments: bootJar
         
     - name: Copy Jar file
-      run: mv build/libs/$(ls build/libs) app.jar
+      run: mv backend/build/libs/$(ls backend/build/libs) app.jar
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.3
