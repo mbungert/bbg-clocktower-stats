@@ -54,7 +54,7 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           name: backend
-          path: app.jar
+          path: backend/app.jar
 
       - name: List Files in build/libs
         run: ls -al
