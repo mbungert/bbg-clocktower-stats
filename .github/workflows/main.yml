@@ -55,7 +55,10 @@ jobs:
         with:
           name: backend
           path: app.jar
-        
+
+      - name: List Files in build/libs
+        run: ls -al
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
