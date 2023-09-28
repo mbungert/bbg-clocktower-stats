@@ -65,10 +65,14 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Current working directory
+        run: pwd
           
       - name: Build and push Docker image
         uses: docker/build-push-action@v5.0.0
         with:
+          context: .
           file: backend/Dockerfile
           push: true
           tags:
