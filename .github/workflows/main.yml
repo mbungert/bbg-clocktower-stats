@@ -35,6 +35,9 @@ jobs:
       with:
         arguments: bootJar
 
+    - name: List Files in build/libs
+      run: ls -al build/libs
+
     - name: Copy Jar file
       run: mv build/libs/$(ls build/libs) app.jar
 
